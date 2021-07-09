@@ -12,6 +12,7 @@ namespace FinalProject_C183027.view
 {
     public partial class unpaidBillReport : System.Web.UI.Page
     {
+
         reportManagerFunctions R_Manager = new reportManagerFunctions();
         PDFManagersAllFunctions P_Manager = new PDFManagersAllFunctions();
         public void pdf_PrintFunction()
@@ -36,6 +37,8 @@ namespace FinalProject_C183027.view
             Response.End();
 
         }
+
+        reportManagerFunctions aReportManager = new reportManagerFunctions();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,7 +47,6 @@ namespace FinalProject_C183027.view
         protected void showButton_Click(object sender, EventArgs e)
         {
             unpaidBillReportGridView.DataSource = R_Manager.GetUnpaidBillReportView(fromDateInput.Text, toDateInput.Text);
-
             unpaidBillReportGridView.DataBind();
 
             double sum = 0;
@@ -57,7 +59,29 @@ namespace FinalProject_C183027.view
 
         protected void pdfButton_Click(object sender, EventArgs e)
         {
+
             pdf_PrintFunction();
+
+            PDFManagersAllFunctions aPdfManager = new PDFManagersAllFunctions();
+            Document pdfDocument = new Document(PageSize.A4, 50f, 50f, 50f, 50f);
+            PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
+
+            pdfDocument.Open();
+            pdfDocument.Add(aPdfManager.GetUnpaidBillReportPdfParagraph(fromDateInput.Text, toDateInput.Text, unpaidBillReportGridView, totalInput.Text));
+            pdfDocument.Close();
+
+            fromDateInput.Text = string.Empty;
+            toDateInput.Text = string.Empty;
+            unpaidBillReportGridView.DataSource = null;
+            unpaidBillReportGridView.DataBind();
+            totalInput.Text = String.Empty;
+
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("content-disposition", "attachment;filename=UnpaidBillReport.pdf");
+            Response.Write(pdfDocument);
+            Response.Flush();
+            Response.End();
+
         }
     }
 }

@@ -137,11 +137,13 @@
                 <asp:Label class="Label-cl" for="selectTestDropDownList" ID="Label5" runat="server" Text="Test Type"></asp:Label>
                 <asp:DropDownList class="input" ID="selectTestDropDownList" OnSelectedIndexChanged="IndexChanged" AutoPostBack="True"  runat="server"></asp:DropDownList>
             </div>
+
+          
             <div class="text-input">
                 <asp:Label for="feeInput" class="Label-cl" ID="Label2" runat="server" Text="Fee(BDT)"></asp:Label>
                 <asp:TextBox ID="feeInput" type="number" class="input" runat="server" ReadOnly="True"></asp:TextBox>
             </div>
-            <div class="text-input">
+           <div class="text-input">
                  <asp:Label class="Label-cl color" ID="outputLabel"  runat="server"></asp:Label>
             </div>
            

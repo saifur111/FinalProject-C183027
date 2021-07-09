@@ -107,6 +107,12 @@ namespace FinalProject_C183027.databaseController
                 object_Test.TestName = sqlReader["TestName"].ToString(); //Databease test table TestName value here
                 object_Test.Fee = Convert.ToDouble(sqlReader["Fee"]); //Databease test table  fee value here
                 object_Test.TestType = sqlReader["TestType"].ToString();//Databease test table  TestType value here
+
+                object_Test.TestId = (int)sqlReader["TestId"];
+                object_Test.TestName = sqlReader["TestName"].ToString();
+                object_Test.Fee = Convert.ToDouble(sqlReader["Fee"]);
+                object_Test.TestType = sqlReader["TestType"].ToString();
+
                 testList.Add(object_Test);
             }
             sqlReader.Close();

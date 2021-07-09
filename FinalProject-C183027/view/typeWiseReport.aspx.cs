@@ -37,6 +37,7 @@ namespace FinalProject_C183027.view
             Response.Flush();
             Response.End();
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,12 +45,15 @@ namespace FinalProject_C183027.view
         protected void showButton_Click(object sender, EventArgs e)
         {
             typeWiseReportGridView.DataSource = R_Manager.GetTypeWiseReportView(fromDateInput.Text, toDateInput.Text);
+
             typeWiseReportGridView.DataBind();
 
             double total = 0;
+            
             for (int i = 0; i < typeWiseReportGridView.Rows.Count; i++)
             {
-                total += double.Parse(typeWiseReportGridView.Rows[i].Cells[3].Text);
+                
+                total += Double.Parse(typeWiseReportGridView.Rows[i].Cells[3].Text);
             }
             totalInput.Text = (total).ToString();
             totalInput.ForeColor = Color.Red;
@@ -58,6 +62,7 @@ namespace FinalProject_C183027.view
         protected void pdfButton_Click(object sender, EventArgs e)
         {
             pdf_PrintFunction();
+
         }
     }
 }

@@ -49,7 +49,7 @@ namespace FinalProject_C183027.rootClasses
             {
                 int rowAffected =object_TestDatabase.TestSave(object_Test);
                 if (rowAffected > 0)
-                    return "Test Saved.)";
+                    return "Test Saved.";
                 else
                     return "Test Name Save Failed !";
             }

@@ -88,6 +88,7 @@
             max-height:400px;
             overflow-y:auto;
         }
+
         .container-home{
             width: 80%;
             margin: 0 auto;
@@ -132,7 +133,7 @@
                  <asp:Label class="Label-cl color" ID="outputLabel"  runat="server"></asp:Label>
             </div>
             <div class="table">
-                 <asp:GridView ID="unpaidBillReportGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                 <asp:GridView ID="unpaidBillReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
                      <Columns>
                           <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
                                <ItemTemplate>

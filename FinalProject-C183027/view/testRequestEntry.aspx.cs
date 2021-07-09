@@ -18,8 +18,9 @@ namespace FinalProject_C183027.view
         PDFManagersAllFunctions P_Manager = new PDFManagersAllFunctions();
         patient ptn = new patient();
         test tst = new test();
-
+        testRequest T_Request = new testRequest();
         private List<test> testList;
+        string date = DateTime.Now.ToString("dd-MM-yyyy");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -82,13 +83,13 @@ namespace FinalProject_C183027.view
             ptn.BillAmount = Convert.ToDouble(totalInput.Text);
             ptn.PaymentStatus = 0;
 
-            string date = DateTime.Now.ToString("dd-MM-yyyy");
+            
 
             if (T_R_Manager.SavePatient(ptn) != "Please use another Mobile No !")//testRequestManagerFunctions SavePatient function called..
             {
                 foreach (test anyTest in (List<test>)Session["TempTest"])
                 {
-                    testRequest T_Request = new testRequest();
+                    
                     T_Request.PatientId = T_R_Manager.GetPatientId(ptn.MobileNo);//testRequestManagerFunctions GetPatientId function called..
                     T_Request.TestId = anyTest.TestId;
                     T_Request.EntryDate = date;
@@ -103,7 +104,6 @@ namespace FinalProject_C183027.view
                 outputLabel.Text = "Please use another Mobile No !";
             }
         }
-
         private void pdf_PrintFunction()
         {
             Document pdfDocument = new Document(PageSize.A4, 50f, 50f, 50f, 50f);

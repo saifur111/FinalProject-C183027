@@ -14,6 +14,7 @@ namespace FinalProject_C183027.rootClasses
         public string SavePatient(patient obj_patient)
         {
             if (T_R_Database.CheckPatient(obj_patient))
+
             {
                 return "Please use another Mobile Number!";
             }
@@ -40,6 +41,7 @@ namespace FinalProject_C183027.rootClasses
         {
             return T_R_Database.GetPatientId(mobileNo);
         }
+
         //------------------------------------------------------------
 
         public string SaveTestRequest(testRequest T_Request)

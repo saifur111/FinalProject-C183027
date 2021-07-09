@@ -27,6 +27,10 @@
              width:80%;
              margin:2rem auto;
              padding:2rem;
+        }
+        .home{
+             width:80%;
+             margin:2rem auto;
              border-radius: 3rem;
              box-shadow: -1px 4px 14px #8f8888c7, -1px -2px 14px #8f8888e7;
         }

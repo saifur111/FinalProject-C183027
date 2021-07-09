@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 90%;
-    margin: 0 auto;
+    margin:2rem auto;
 }
 
 .container-wraper {
@@ -120,6 +120,36 @@ body {
             margin-bottom:0;
             text-align:center;
         }
+.dropdown-content {
+    display: none;
+    text-align: center;
+    border-radius: 1rem;
+    position: absolute;
+    background-color:#fff;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+        color:black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+}
+
+.dropdown-content a:hover {
+    color:white;
+    background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+        display: block;
+}
+
+.dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+}
     </style>
 </head>
 <body>
@@ -156,6 +186,7 @@ body {
                </div>
             </section>
          </div>
+
          <footer>
             <div class="container-home home-footer home-main">
                 <p class="Label-cl-f" >&copy; <%: DateTime.Now.Year %> -Develop By Md Saifur Rahman</p>

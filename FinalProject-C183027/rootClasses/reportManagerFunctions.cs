@@ -9,21 +9,25 @@ namespace FinalProject_C183027.rootClasses
 {
     public class reportManagerFunctions
     {
-        reportDB reportDB = new reportDB();
+        reportDB report_DB = new reportDB();
 
         public List<testWiseReport> GetTestWiseReportView(string fromDate, string toDate)
         {
-            return reportDB.GetTestWiseReportView(fromDate, toDate);
+            return report_DB.GetTestWiseReportView(fromDate, toDate);
         }
+
+
 
         public List<typeWiseReport> GetTypeWiseReportView(string fromDate, string toDate)
         {
-            return reportDB.GetTypeWiseReportView(fromDate, toDate);
+            return report_DB.GetTypeWiseReportView(fromDate, toDate);
         }
+
+
 
         public List<unPaidBillCheck> GetUnpaidBillReportView(string fromDate, string toDate)
         {
-            return reportDB.GetUnpaidBillReportList(fromDate, toDate);
+            return report_DB.GetUnpaidBillReportList(fromDate, toDate);
         }
     }
 }

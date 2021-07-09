@@ -22,6 +22,7 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
         .home{
              width:80%;
              margin:2rem auto;
@@ -88,6 +89,7 @@
             max-height:400px;
             overflow-y:auto;
         }
+
         .container-home{
             width: 80%;
             margin: 0 auto;

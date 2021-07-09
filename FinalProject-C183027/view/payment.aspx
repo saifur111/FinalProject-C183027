@@ -22,12 +22,10 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-
-        
         .home{
              width:80%;
-             margin:0 auto;
-             margin-bottom:2rem;
+             margin:2rem auto;
+             padding:2rem;
              border-radius: 3rem;
              box-shadow: -1px 4px 14px #8f8888c7, -1px -2px 14px #8f8888e7;
         }
@@ -92,7 +90,7 @@
             margin: 0 auto;
         }
         .home-footer{
-            margin: 11rem;
+            margin: 12.5rem;
             padding: 1rem;
             margin-top: 5rem;
         }
@@ -105,14 +103,13 @@
             margin-bottom:0;
             text-align:center;
         }
+         
 
-        
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
-            <div class="home">
+        <div class="home">
            <div class="head-mr">
                <a class="text-center " runat="server" href="~/index.aspx">Home Page</a>
            </div>
@@ -151,7 +148,6 @@
                 <p class="Label-cl-f" >&copy; <%: DateTime.Now.Year %> -Develop By Md Saifur Rahman</p>
             </div>
         </footer>
-        </div>
     </form>
 </body>
 </html>

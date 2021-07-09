@@ -15,7 +15,6 @@ namespace FinalProject_C183027.view
         paymentManagerFunctions p_m_function = new paymentManagerFunctions();
 
         dueView d_V = new dueView();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             outputLabel.Text = "";
@@ -26,7 +25,6 @@ namespace FinalProject_C183027.view
         {
             if (billNoInput.Text != "" || mobileNoInput.Text != "")
             {
-                
                 d_V = p_m_function.GetDue(billNoInput.Text, mobileNoInput.Text);
                 if (d_V != null)
                 {
@@ -38,6 +36,7 @@ namespace FinalProject_C183027.view
                 {
                     outputLabel.ForeColor = Color.Red;
                     outputLabel.Text = "No Unpaid bill information found For this Bill No or Mobile No !";
+
                 }
             }
             else

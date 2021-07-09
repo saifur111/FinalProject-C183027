@@ -22,6 +22,7 @@ namespace FinalProject_C183027.view
 
             pdfDocument.Open();
             pdfDocument.Add(P_Manager.GetTestWiseReportPdfParagraph(fromDateInput.Text, toDateInput.Text, testWiseReportGridView, totalInput.Text));
+
             pdfDocument.Close();
 
             fromDateInput.Text = string.Empty;
@@ -56,6 +57,7 @@ namespace FinalProject_C183027.view
         {
             pdf_PrintFunction();
         }
+
 
         
     }

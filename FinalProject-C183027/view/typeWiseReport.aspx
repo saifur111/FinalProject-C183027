@@ -125,6 +125,7 @@
                 <asp:Label for="fromDateInput" class="Label-cl" ID="Label1" runat="server" Text="From Date"></asp:Label>
                 <asp:TextBox ID="fromDateInput" type="date" class="input" runat="server" required="required"></asp:TextBox>
            </div>
+
            <div class="text-input">
                 <asp:Label class="Label-cl" for="toDateInput" ID="Label2" runat="server" Text="To Date"></asp:Label>
                 <asp:TextBox type="date" ID="toDateInput" class="input" runat="server" required="required"></asp:TextBox>
@@ -138,7 +139,7 @@
                  <asp:Label class="Label-cl color" ID="outputLabel"  runat="server"></asp:Label>
             </div>
             <div class="table">
-                 <asp:GridView ID="typeWiseReportGridView" AutoGenerateColumns="False" CssClass="gridView" runat="server">
+                 <asp:GridView ID="typeWiseReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
                      <Columns>
                          <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
                              <ItemTemplate>
