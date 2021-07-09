@@ -52,7 +52,16 @@ namespace FinalProject_C183027.view
             double sum = 0;
             for (int i = 0; i < unpaidBillReportGridView.Rows.Count; i++)
             {
-                sum += Double.Parse(unpaidBillReportGridView.Rows[i].Cells[4].Text);
+                try
+                {
+                    sum += Double.Parse(unpaidBillReportGridView.Rows[i].Cells[4].Text);
+                }
+                catch
+                {
+                    unpaidBillReportGridView.Rows[i].Cells[4].Text = 0;
+                    continue;
+                }
+                
             }
             totalInput.Text = sum.ToString();
         }

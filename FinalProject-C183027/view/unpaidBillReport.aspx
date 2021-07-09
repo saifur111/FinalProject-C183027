@@ -147,6 +147,20 @@
                      </Columns>
                 </asp:GridView>
             </div>
+            <div class="table">
+                <asp:GridView ID="GridView1" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
+                     
+                .table{
+            font-size: 1.6rem;
+            margin-top:50px;
+            border-radius: 4px;
+            padding:0 50px;
+            max-height:400px;
+            overflow-y:auto;
+            }
+                </asp:GridView>
+            </div>
+
             <div class="text-input">
                 <asp:Label class="Label-cl" for="totalInput" ID="Label6" runat="server" Text="Total (BDT)"></asp:Label>
                 <asp:TextBox type="text" ReadOnly="True" ID="totalInput" class="input" runat="server" required="required"></asp:TextBox>

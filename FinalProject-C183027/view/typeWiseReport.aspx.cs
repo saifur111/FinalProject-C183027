@@ -52,8 +52,15 @@ namespace FinalProject_C183027.view
             
             for (int i = 0; i < typeWiseReportGridView.Rows.Count; i++)
             {
-                
-                total += Double.Parse(typeWiseReportGridView.Rows[i].Cells[3].Text);
+                try
+                {
+                    total += Double.Parse(typeWiseReportGridView.Rows[i].Cells[3].Text);
+                }
+                catch
+                {
+                    typeWiseReportGridView.Rows[i].Cells[3].Text = "0";
+                    continue;
+                }
             }
             totalInput.Text = (total).ToString();
             totalInput.ForeColor = Color.Red;

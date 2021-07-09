@@ -47,9 +47,19 @@ namespace FinalProject_C183027.view
             testWiseReportGridView.DataBind();
 
             double total = 0;
+            
             for (int i = 0; i < testWiseReportGridView.Rows.Count; i++)
             {
-                total += Double.Parse(testWiseReportGridView.Rows[i].Cells[3].Text);
+                try
+                {
+                    total += Double.Parse(testWiseReportGridView.Rows[i].Cells[3].Text);
+                }
+                catch
+                {
+                    testWiseReportGridView.Rows[i].Cells[3].Text = "0";
+                    continue;
+                }
+                
             }
             totalInput.Text = (total).ToString();
         }
