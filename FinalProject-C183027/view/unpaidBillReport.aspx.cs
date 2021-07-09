@@ -58,7 +58,7 @@ namespace FinalProject_C183027.view
                 }
                 catch
                 {
-                    unpaidBillReportGridView.Rows[i].Cells[4].Text = 0;
+                    unpaidBillReportGridView.Rows[i].Cells[4].Text = "0";
                     continue;
                 }
                 
@@ -68,29 +68,7 @@ namespace FinalProject_C183027.view
 
         protected void pdfButton_Click(object sender, EventArgs e)
         {
-
             pdf_PrintFunction();
-
-            PDFManagersAllFunctions aPdfManager = new PDFManagersAllFunctions();
-            Document pdfDocument = new Document(PageSize.A4, 50f, 50f, 50f, 50f);
-            PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
-
-            pdfDocument.Open();
-            pdfDocument.Add(aPdfManager.GetUnpaidBillReportPdfParagraph(fromDateInput.Text, toDateInput.Text, unpaidBillReportGridView, totalInput.Text));
-            pdfDocument.Close();
-
-            fromDateInput.Text = string.Empty;
-            toDateInput.Text = string.Empty;
-            unpaidBillReportGridView.DataSource = null;
-            unpaidBillReportGridView.DataBind();
-            totalInput.Text = String.Empty;
-
-            Response.ContentType = "application/pdf";
-            Response.AppendHeader("content-disposition", "attachment;filename=UnpaidBillReport.pdf");
-            Response.Write(pdfDocument);
-            Response.Flush();
-            Response.End();
-
         }
     }
 }

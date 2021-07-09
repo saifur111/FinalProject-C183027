@@ -66,9 +66,6 @@ namespace FinalProject_C183027.view
         protected void pdfButton_Click(object sender, EventArgs e)
         {
             pdf_PrintFunction();
-        }
-
-
-        
+        }  
     }
 }
