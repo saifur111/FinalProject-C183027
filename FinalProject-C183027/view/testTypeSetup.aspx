@@ -142,7 +142,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Test Type" ItemStyle-Width="100px">
                             <ItemTemplate>
-                                <asp:Label Text='<%#Eval("TestTypeName") %>' runat="server"></asp:Label>
+                                <asp:Label Text='<%#Eval("testType_get_set_class_testTypeName") %>' runat="server"></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

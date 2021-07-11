@@ -158,8 +158,8 @@
                                      <%#Container.DataItemIndex+1 %>
                              </ItemTemplate>
                           </asp:TemplateField>
-                             <asp:BoundField ItemStyle-Width="150px" DataField="TestName" HeaderText="Test Name"/>
-                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Fee" HeaderText="Fee"/>
+                             <asp:BoundField ItemStyle-Width="150px" DataField="test_get_set_class_TestName" HeaderText="Test Name"/>
+                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="test_get_set_class_Fee" HeaderText="Fee"/>
                        </Columns>
                  </asp:GridView>
             </div>
@@ -170,6 +170,7 @@
             <div class="text-input mb">
                  <asp:Button ID="saveButton" class="text-center btnn" runat="server" Text="Save" OnClick="saveButton_Click" />
             </div>
+           
         </div>
         <footer>
             <div class="container-home home-footer home">

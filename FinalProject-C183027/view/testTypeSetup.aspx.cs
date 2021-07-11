@@ -19,7 +19,8 @@ namespace FinalProject_C183027.view
 
         protected void typeNameSave_Click(object sender, EventArgs e)
         {
-            object_testType.TestTypeName = typeNameInput.Text;// get value text input..
+            object_testType.testType_get_set_class_testTypeName = typeNameInput.Text;// get value text input typeNameInput.Text..
+
             outputLabel.Text = object_TestManager.TestTypeSave(object_testType);
             typeNameInput.Text = string.Empty;
 

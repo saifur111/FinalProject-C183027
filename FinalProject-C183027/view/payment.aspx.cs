@@ -28,9 +28,9 @@ namespace FinalProject_C183027.view
                 d_V = p_m_function.GetDue(billNoInput.Text, mobileNoInput.Text);
                 if (d_V != null)
                 {
-                    Session["patientId"] = d_V.PatientId;
-                    amountInput.Text = d_V.Amount;
-                    dueDateInput.Text = d_V.DueDate;
+                    Session["patientId"] = d_V.dueView_get_set_class_PatientId;
+                    amountInput.Text = d_V.dueView_get_set_class_Amount;
+                    dueDateInput.Text = d_V.dueView_get_set_class_DueDate;
                 }
                 else
                 {

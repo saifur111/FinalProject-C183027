@@ -11,16 +11,16 @@ namespace FinalProject_C183027.rootClasses
     {
         reportDB report_DB = new reportDB();
 
-        public List<testWiseReport> GetTestWiseReportView(string fromDate, string toDate)
+        public List<testWiseReport> GetTestWiseReport(string fromDate, string toDate)
         {
-            return report_DB.GetTestWiseReportView(fromDate, toDate);
+            return report_DB.GetTestWiseReport(fromDate, toDate);
         }
 
 
 
-        public List<typeWiseReport> GetTypeWiseReportView(string fromDate, string toDate)
+        public List<typeWiseReport> GetTypeWiseReport(string fromDate, string toDate)
         {
-            return report_DB.GetTypeWiseReportView(fromDate, toDate);
+            return report_DB.GetTypeWiseReport(fromDate, toDate);
         }
 
 

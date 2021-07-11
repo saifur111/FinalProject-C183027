@@ -21,9 +21,9 @@ namespace FinalProject_C183027.databaseController
                 d_V = new dueView();
                 while (sqlReader.Read())
                 {
-                    d_V.PatientId = Convert.ToInt32(sqlReader["PatientId"]);// Bill Number As a patientId ---Database 
-                    d_V.Amount = sqlReader["BillAmount"].ToString();// Here BillAmount Database TestRequest Table 
-                    d_V.DueDate = sqlReader["DueDate"].ToString();// Here EntryDate get as DueDate Database TestRequest Table
+                    d_V.dueView_get_set_class_PatientId = Convert.ToInt32(sqlReader["PatientId"]);// Bill Number As a patientId ---Database 
+                    d_V.dueView_get_set_class_Amount = sqlReader["BillAmount"].ToString();// Here BillAmount Database TestRequest Table 
+                    d_V.dueView_get_set_class_DueDate = sqlReader["DueDate"].ToString();// Here EntryDate get as DueDate Database TestRequest Table
                 }
                 sqlReader.Close();
                 sqlCon.Close();

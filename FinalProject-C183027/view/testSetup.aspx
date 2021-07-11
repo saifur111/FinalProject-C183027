@@ -145,17 +145,17 @@
                                  </asp:TemplateField>
                                  <asp:TemplateField HeaderText="Test Name" ItemStyle-Width="250px">
                                  <ItemTemplate>
-                                       <asp:Label Text='<%#Eval("TestName") %>' runat="server"></asp:Label><%--test class variable--%>
+                                       <asp:Label Text='<%#Eval("test_get_set_class_TestName") %>' runat="server"></asp:Label>
                                  </ItemTemplate>
                                  </asp:TemplateField>
                                  <asp:TemplateField HeaderText="Fee" ItemStyle-Width="100px" ItemStyle-HorizontalAlign="Center">
                                  <ItemTemplate>
-                                 <asp:Label Text='<%#Eval("Fee") %>' runat="server"></asp:Label>
+                                 <asp:Label Text='<%#Eval("test_get_set_class_Fee") %>' runat="server"></asp:Label>
                                  </ItemTemplate>
                                  </asp:TemplateField>
                                  <asp:TemplateField HeaderText="Test Type" ItemStyle-Width="100px">
                                  <ItemTemplate>
-                                      <asp:Label Text='<%#Eval("TestType") %>' runat="server"></asp:Label>
+                                      <asp:Label Text='<%#Eval("test_get_set_class_TestType") %>' runat="server"></asp:Label>
                                  </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

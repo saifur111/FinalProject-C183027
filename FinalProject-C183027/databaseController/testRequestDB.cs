@@ -12,7 +12,7 @@ namespace FinalProject_C183027.databaseController
         public bool CheckPatient(patient Patient)
         {
 
-            qry = "SELECT * FROM Patient WHERE MobileNo = '" + Patient.MobileNo + "'";
+            qry = "SELECT * FROM Patient WHERE MobileNo = '" + Patient.patient_get_set_class_MobileNo + "'";
             sqlCommand = new SqlCommand(qry, sqlCon);
             sqlCon.Open();
             sqlReader = sqlCommand.ExecuteReader();
@@ -21,10 +21,16 @@ namespace FinalProject_C183027.databaseController
             sqlCon.Close();
             return patientExists;
         }
+
         //------------------------------------------------
+
         public int SavePatient(patient Patient)
         {
-            qry = "INSERT INTO Patient (Name, DateOfBirth, MobileNo, BillAmount, PaymentStatus) VALUES ('" + Patient.Name + "','" + Patient.DateOfBirth + "','" + Patient.MobileNo + "','" + Patient.BillAmount + "','" + Patient.PaymentStatus + "')";
+            qry = "INSERT INTO Patient (Name, DateOfBirth, MobileNo, BillAmount, PaymentStatus) VALUES " +
+                "('" + Patient.patient_get_set_class_Name + "','" + Patient.patient_get_set_class_DateOfBirth + "'," +
+                "'" + Patient.patient_get_set_class_MobileNo + "','" + Patient.patient_get_set_class_BillAmount + "'," +
+                "'" + Patient.patient_get_set_class_PaymentStatus + "')";
+
             sqlCommand = new SqlCommand(qry, sqlCon);
             sqlCon.Open();
             int rowAffected = sqlCommand.ExecuteNonQuery();
@@ -66,7 +72,11 @@ namespace FinalProject_C183027.databaseController
         //----------------------------------------------------
         public int SaveTestRequest(testRequest TestRequest)
         {
-            qry = "INSERT INTO TestRequest (PatientId, TestId, EntryDate) VALUES ('" + TestRequest.PatientId + "','" + TestRequest.TestId + "','" + TestRequest.EntryDate + "')";
+            qry = "INSERT INTO TestRequest (PatientId, TestId, EntryDate) VALUES " +
+                "('" + TestRequest.testRequest_get_set_class_PatientId + "'," +
+                "'" + TestRequest.testRequest_get_set_class_TestId + "'," +
+                "'" + TestRequest.testRequest_get_set_class_EntryDate + "')";
+
             sqlCommand = new SqlCommand(qry, sqlCon);
             sqlCon.Open();
             int rowAffected = sqlCommand.ExecuteNonQuery();

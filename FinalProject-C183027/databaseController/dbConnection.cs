@@ -8,7 +8,7 @@ namespace FinalProject_C183027.databaseController
 {
     public class dbConnection
     {
-        protected string connectionSrting = @"Server=DESKTOP-N0MTD5D\SQLEXPRESS; Database=dcmsDB; Integrated Security= True";
+        protected string connectionSrting = @"Server=DESKTOP-N0MTD5D\SQLEXPRESS; Database=FinalProjectDB; Integrated Security= True";
         public string qry { get; set; }
         public SqlConnection sqlCon { get; set; }
         public SqlCommand sqlCommand { get; set; }

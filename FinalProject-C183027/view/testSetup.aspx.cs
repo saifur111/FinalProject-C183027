@@ -17,8 +17,8 @@ namespace FinalProject_C183027.view
             if (!IsPostBack)
             {
                 testTypeDropDownList.DataSource = object_TestManager.GetAllTestTypes();
-                testTypeDropDownList.DataTextField = "TestTypeName";  // testType Class string variable here
-                testTypeDropDownList.DataValueField = "TestTypeId";   // testType Class string variable here
+                testTypeDropDownList.DataTextField = "testType_get_set_class_testTypeName";  // testType Class string variable here
+                testTypeDropDownList.DataValueField = "testType_get_set_class_testTypeId";   // testType Class string variable here
                 testTypeDropDownList.DataBind();
                 testTypeDropDownList.Items.Insert(0, new ListItem("Select Test Type", "0"));
             }
@@ -28,10 +28,13 @@ namespace FinalProject_C183027.view
         {
             test object_test = new test(); // Create test class object....getsetClasses
 
-            object_test.TestName = textNameTextBox.Text;
-            object_test.Fee = Double.Parse(feeTexBox.Text);
-            object_test.TestTypeId = Convert.ToInt32(testTypeDropDownList.SelectedValue);
+            object_test.test_get_set_class_TestName = textNameTextBox.Text;
+            object_test.test_get_set_class_Fee = Double.Parse(feeTexBox.Text);
+
+            object_test.test_get_set_class_TestTypeId = Convert.ToInt32(testTypeDropDownList.SelectedValue);
+
             outputLabel.Text = object_TestManager.TestSave(object_test);//testManagerFuntions class TestSave function callded
+            
             textNameTextBox.Text = string.Empty;
             feeTexBox.Text = string.Empty;
 

@@ -78,13 +78,13 @@ namespace FinalProject_C183027.view
         protected global::System.Web.UI.WebControls.Label outputLabel;
 
         /// <summary>
-        /// typeWiseReportGridView control.
+        /// type_WiseReportGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView typeWiseReportGridView;
+        protected global::System.Web.UI.WebControls.GridView type_WiseReportGridView;
 
         /// <summary>
         /// Label6 control.

@@ -78,13 +78,13 @@ namespace FinalProject_C183027.view
         protected global::System.Web.UI.WebControls.Label outputLabel;
 
         /// <summary>
-        /// unpaidBillReportGridView control.
+        /// UP_BillReportGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView unpaidBillReportGridView;
+        protected global::System.Web.UI.WebControls.GridView UP_BillReportGridView;
 
         /// <summary>
         /// Label6 control.

@@ -133,17 +133,17 @@
                  <asp:Label class="Label-cl color" ID="outputLabel"  runat="server"></asp:Label>
             </div>
             <div class="table">
-                 <asp:GridView ID="unpaidBillReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
+                 <asp:GridView ID="UP_BillReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
                      <Columns>
                           <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
                                <ItemTemplate>
                                    <%#Container.DataItemIndex+1 %>
                                </ItemTemplate>
                           </asp:TemplateField>
-                          <asp:BoundField ItemStyle-Width="100px" ItemStyle-HorizontalAlign="Center" DataField="BillNo" HeaderText="Bill No"/>
-                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="Name" HeaderText="Patient Name"/>
-                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="MobileNo" HeaderText="Mobile No"/>
-                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="BillAmount" HeaderText="Bill Amount"/>
+                          <asp:BoundField ItemStyle-Width="100px" ItemStyle-HorizontalAlign="Center" DataField="unPaidBillCheck_get_set_class_BillNo" HeaderText="Bill No"/>
+                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="unPaidBillCheck_get_set_class_Name" HeaderText="Patient Name"/>
+                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="unPaidBillCheck_get_set_class_MobileNo" HeaderText="Mobile No"/>
+                          <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="unPaidBillCheck_get_set_class_BillAmount" HeaderText="Bill Amount"/>
                      </Columns>
                 </asp:GridView>
             </div>

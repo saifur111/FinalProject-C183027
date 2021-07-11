@@ -78,13 +78,13 @@ namespace FinalProject_C183027.view
         protected global::System.Web.UI.WebControls.Label outputLabel;
 
         /// <summary>
-        /// testWiseReportGridView control.
+        /// test_WiseReportGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView testWiseReportGridView;
+        protected global::System.Web.UI.WebControls.GridView test_WiseReportGridView;
 
         /// <summary>
         /// Label3 control.

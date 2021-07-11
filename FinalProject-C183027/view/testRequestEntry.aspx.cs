@@ -19,15 +19,18 @@ namespace FinalProject_C183027.view
         patient ptn = new patient();
         test tst = new test();
         testRequest T_Request = new testRequest();
+
         private List<test> testList;
+
         string date = DateTime.Now.ToString("dd-MM-yyyy");
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 selectTestDropDownList.DataSource = T_Manager.GetAllTest();//testManagerFunction class GetAllTest function called..
-                selectTestDropDownList.DataTextField = "TestName";
-                selectTestDropDownList.DataValueField = "TestId";
+                selectTestDropDownList.DataTextField = "test_get_set_class_TestName";
+                selectTestDropDownList.DataValueField = "test_get_set_class_TestId";
                 selectTestDropDownList.DataBind();
                 selectTestDropDownList.Items.Insert(0, new System.Web.UI.WebControls.ListItem("Select Test Name", "0"));
             }
@@ -47,10 +50,10 @@ namespace FinalProject_C183027.view
         {
             outputLabel.Text = "";
 
-            tst.TestId = Convert.ToInt32(selectTestDropDownList.SelectedValue);
-            tst.TestName = selectTestDropDownList.SelectedItem.Text;
+            tst.test_get_set_class_TestId = Convert.ToInt32(selectTestDropDownList.SelectedValue);
+            tst.test_get_set_class_TestName = selectTestDropDownList.SelectedItem.Text;
 
-            tst.Fee = Convert.ToDouble(feeInput.Text);
+            tst.test_get_set_class_Fee = Convert.ToDouble(feeInput.Text);
 
             if (Session["TempTest"] == null)
             {
@@ -77,11 +80,13 @@ namespace FinalProject_C183027.view
 
         protected void saveButton_Click(object sender, EventArgs e)
         {
-            ptn.Name = patientNameInput.Text;
-            ptn.DateOfBirth = dateOfbirthInput.Text;
-            ptn.MobileNo = phoneInput.Text;
-            ptn.BillAmount = Convert.ToDouble(totalInput.Text);
-            ptn.PaymentStatus = 0;
+            ptn.patient_get_set_class_Name = patientNameInput.Text;
+            ptn.patient_get_set_class_DateOfBirth = dateOfbirthInput.Text;
+            ptn.patient_get_set_class_MobileNo = phoneInput.Text;
+
+            ptn.patient_get_set_class_BillAmount = Convert.ToDouble(totalInput.Text);
+
+            ptn.patient_get_set_class_PaymentStatus = 0;
 
             
 
@@ -90,12 +95,15 @@ namespace FinalProject_C183027.view
                 foreach (test anyTest in (List<test>)Session["TempTest"])
                 {
                     
-                    T_Request.PatientId = T_R_Manager.GetPatientId(ptn.MobileNo);//testRequestManagerFunctions GetPatientId function called..
-                    T_Request.TestId = anyTest.TestId;
-                    T_Request.EntryDate = date;
+                    T_Request.testRequest_get_set_class_PatientId = T_R_Manager.GetPatientId(ptn.patient_get_set_class_MobileNo);//testRequestManagerFunctions GetPatientId function called..
+                   
+                    T_Request.testRequest_get_set_class_TestId = anyTest.test_get_set_class_TestId;
+                    
+                    T_Request.testRequest_get_set_class_EntryDate = date;
 
                     outputLabel.Text = T_R_Manager.SaveTestRequest(T_Request); //testRequestManagerFunctions SaveTestRequest function called..
                 }
+
                 // PDF save code Here....
                 pdf_PrintFunction();
             }
@@ -110,7 +118,9 @@ namespace FinalProject_C183027.view
             PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
 
             pdfDocument.Open();
-            pdfDocument.Add(P_Manager.GetBillPdfParagraph(date, T_R_Manager.GetPatientId(ptn.MobileNo), ptn.Name, ptn.DateOfBirth, ptn.MobileNo, testRequestGridView, totalInput.Text));
+
+            pdfDocument.Add(P_Manager.GetBillPdfParagraph(date, T_R_Manager.GetPatientId(ptn.patient_get_set_class_MobileNo), ptn.patient_get_set_class_Name, ptn.patient_get_set_class_DateOfBirth, ptn.patient_get_set_class_MobileNo, testRequestGridView, totalInput.Text));
+           
             pdfDocument.Close();
 
             patientNameInput.Text = string.Empty;

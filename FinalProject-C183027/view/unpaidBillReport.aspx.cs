@@ -21,13 +21,13 @@ namespace FinalProject_C183027.view
             PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
 
             pdfDocument.Open();
-            pdfDocument.Add(P_Manager.GetUnpaidBillReportPdfParagraph(fromDateInput.Text, toDateInput.Text, unpaidBillReportGridView, totalInput.Text));
+            pdfDocument.Add(P_Manager.GetUnpaidBillReportPdfParagraph(fromDateInput.Text, toDateInput.Text, UP_BillReportGridView, totalInput.Text));
             pdfDocument.Close();
 
             fromDateInput.Text = string.Empty;
             toDateInput.Text = string.Empty;
-            unpaidBillReportGridView.DataSource = null;
-            unpaidBillReportGridView.DataBind();
+            UP_BillReportGridView.DataSource = null;
+            UP_BillReportGridView.DataBind();
             totalInput.Text = String.Empty;
 
             Response.ContentType = "application/pdf";
@@ -38,7 +38,6 @@ namespace FinalProject_C183027.view
 
         }
 
-        reportManagerFunctions aReportManager = new reportManagerFunctions();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -46,22 +45,15 @@ namespace FinalProject_C183027.view
         
         protected void showButton_Click(object sender, EventArgs e)
         {
-            unpaidBillReportGridView.DataSource = R_Manager.GetUnpaidBillReportView(fromDateInput.Text, toDateInput.Text);
-            unpaidBillReportGridView.DataBind();
+            UP_BillReportGridView.DataSource = R_Manager.GetUnpaidBillReportView(fromDateInput.Text, toDateInput.Text);
+            UP_BillReportGridView.DataBind();
 
             double sum = 0;
-            for (int i = 0; i < unpaidBillReportGridView.Rows.Count; i++)
+            for (int i = 0; i < UP_BillReportGridView.Rows.Count; i++)
             {
-                try
-                {
-                    sum += Double.Parse(unpaidBillReportGridView.Rows[i].Cells[4].Text);
-                }
-                catch
-                {
-                    unpaidBillReportGridView.Rows[i].Cells[4].Text = "0";
-                    continue;
-                }
-                
+               
+                    sum += Double.Parse(UP_BillReportGridView.Rows[i].Cells[4].Text);
+ 
             }
             totalInput.Text = sum.ToString();
         }

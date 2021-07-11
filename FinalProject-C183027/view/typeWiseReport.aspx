@@ -139,16 +139,16 @@
                  <asp:Label class="Label-cl color" ID="outputLabel"  runat="server"></asp:Label>
             </div>
             <div class="table">
-                 <asp:GridView ID="typeWiseReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
+                 <asp:GridView ID="type_WiseReportGridView" AutoGenerateColumns="False" CssClass="gridView table table-striped table-dark table-wrapper-scroll-y my-custom-scrollbar table-striped mb-0 text-center" runat="server">
                      <Columns>
                          <asp:TemplateField HeaderText="SN" ItemStyle-Width="30px" ItemStyle-HorizontalAlign="Center">
                              <ItemTemplate>
                                   <%#Container.DataItemIndex+1 %>
                          </ItemTemplate>
                          </asp:TemplateField>
-                         <asp:BoundField ItemStyle-Width="150px" DataField="TestType" HeaderText="Test Type"/>
-                         <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="NoOfTest" HeaderText="No Of Test"/>
-                         <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="TotalAmount" HeaderText="Total Amount"/>
+                         <asp:BoundField ItemStyle-Width="150px" DataField="typeWiseReport_get_set_class_TestType" HeaderText="Test Type"/>
+                         <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="typeWiseReport_get_set_class_NoOfTest" HeaderText="No Of Test"/>
+                         <asp:BoundField ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" DataField="typeWiseReport_get_set_class_TotalAmount" HeaderText="Total Amount"/>
                      </Columns>
                  </asp:GridView>
             </div>

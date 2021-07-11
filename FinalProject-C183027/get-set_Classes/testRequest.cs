@@ -7,8 +7,8 @@ namespace FinalProject_C183027.get_set_Classes
 {
     public class testRequest
     {
-        public int PatientId { get; set; }
-        public int TestId { get; set; }
-        public string EntryDate { get; set; }
+        public int testRequest_get_set_class_PatientId { get; set; }
+        public int testRequest_get_set_class_TestId { get; set; }
+        public string testRequest_get_set_class_EntryDate { get; set; }
     }
 }
